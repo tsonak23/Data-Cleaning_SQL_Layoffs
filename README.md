@@ -18,8 +18,9 @@ After creating a copy of raw data , we will be using **row-num by partition** fu
 
 <br>
 
-<!-- ORANGE CODE -->
+<!-- ORANGE CODE BOX -->
 <div style="background-color:#0d1117; color:#f0883e; padding:12px; border-radius:8px; font-family:monospace;">
+
 SELECT
     ROW_NUMBER()
     OVER(PARTITION BY company, location, industry, total_laid_off, percentage_laid_off,
