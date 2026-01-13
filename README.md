@@ -12,7 +12,7 @@ Workflow:  Sequence followed for this data cleaning project  will be:
 
 Query with explanation : 
 
---After creating a copy of raw data , we will be using **row-num by partition** function as there was no unique key column in the dataset.
+After creating a copy of raw data , we will be using **row-num by partition** function as there was no unique key column in the dataset.
 
 </div>
 
@@ -20,7 +20,7 @@ Query with explanation :
 
 <!-- ORANGE CODE -->
 <div style="background-color:#0d1117; color:#f0883e; padding:12px; border-radius:8px; font-family:monospace;">
--- SELECT
+SELECT
     ROW_NUMBER()
     OVER(PARTITION BY company, location, industry, total_laid_off, percentage_laid_off,
                       layoff_date, stage, country, funds_raised_millions
