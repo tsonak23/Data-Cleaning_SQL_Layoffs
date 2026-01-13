@@ -1,66 +1,26 @@
- Data-Cleaning_Oracle SQL
- 
-<!-- BLUE INSTRUCTIONS -->
-<div style="color:#1f6feb; font-weight:600;">
-🔹 ** Project Title : Layoffs_In_Tech Firm_Data cleaning using Oracle SQL.**
-Workflow:  Sequence followed for this data cleaning project  will be:
-           1.Creating another copy of working table to make sure we do not run out with raw data in any case. 
-           2.Check and remove duplicates if any.
-           3.Standardize data and remove errors. 
-           4.Look for null values and understand if required or to remove.
-           5.Remove columns or rows that are not necessary.
+<!-- ===================== BLUE INSTRUCTION BLOCK ===================== -->
+<instructions>
+  <div style="color:#1f6feb; font-weight:600; font-size:15px; line-height:1.6;">
+    
+    🔹 <b>Instructions</b><br/>
+    1. Load the dataset into Power BI Desktop<br/>
+    2. Open Power Query Editor<br/>
+    3. Clean and transform the data<br/>
+    4. Create calculated columns and DAX measures<br/>
+    5. Build visuals and publish the report<br/>
+    
+  </div>
+</instructions>
 
-Query with explanation : 
-
-After creating a copy of raw data , we will be using **row-num by partition** function as there was no unique key column in the dataset.
-
-</div>
-
-<br>
-
-<!-- ORANGE CODE BOX -->
-<div style="background-color:#0d1117; color:#f0883e; padding:12px; border-radius:8px; font-family:monospace;">
-
-SELECT
-    ROW_NUMBER()
-    OVER(PARTITION BY company, location, industry, total_laid_off, percentage_laid_off,
-                      layoff_date, stage, country, funds_raised_millions
-         ORDER BY
-             company DESC
-    ) AS rom_num
-FROM
-    layoffs_staging;
-</div>
-
-
-
- Project Title : Layoffs_In_Tech Firm_Data cleaning using Oracle SQL.
-
- Workflow:  Sequence followed for this data cleaning project  will be:
-           1.Creating another copy of working table to make sure we do not run out with raw data in any case. 
-           2.Check and remove duplicates if any.
-           3.Standardize data and remove errors. 
-           4.Look for null values and understand if required or to remove.
-           5.Remove columns or rows that are not necessary.
-
-Query with explanation : 
-
---After creating a copy of raw data , we will be using **row-num by partition** function as there was no unique key column in the dataset.
-
-SELECT
-    ROW_NUMBER()
-    OVER(PARTITION BY company, location, industry, total_laid_off, percentage_laid_off,
-                      layoff_date, stage, country, funds_raised_millions
-         ORDER BY
-             company DESC
-    ) AS rom_num
-FROM
-    layoffs_staging;
-
-
-  
-           
- Learnings : 
-
-
-
+<!-- ===================== ORANGE CODE BLOCK ===================== -->
+<codeblock>
+  <div style="background-color:#0d1117; color:#f0883e; padding:14px; border-radius:10px; font-family:Consolas, monospace; font-size:14px;">
+    
+    SELECT product_category,<br/>
+           SUM(sales_amount) AS total_sales<br/>
+    FROM sales_data<br/>
+    GROUP BY product_category<br/>
+    ORDER BY total_sales DESC;<br/>
+    
+  </div>
+</codeblock>
