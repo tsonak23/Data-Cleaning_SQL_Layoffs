@@ -148,7 +148,7 @@ and percentage_laid_off is null
 Delete
 from layoffs_Staging2
 where total_laid_off is null
-and percentage_laid_off is null
+and percentage_laid_off is null;
 
 
 --Removed row column--
