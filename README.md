@@ -1,6 +1,5 @@
-Data-Cleaning_Oracle SQL
+**Data-Cleaning_Oracle SQL**
  
-
  
  ** Project Title : Layoffs_In_Tech Firm_Data cleaning using Oracle SQL.**
  
