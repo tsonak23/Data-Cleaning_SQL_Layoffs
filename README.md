@@ -2,6 +2,7 @@
  
  
  ** Project Title : Layoffs_In_Tech Firm_Data cleaning using Oracle SQL.**
+ 
  
  Workflow: Sequence followed for the data cleaning project will be:
 
