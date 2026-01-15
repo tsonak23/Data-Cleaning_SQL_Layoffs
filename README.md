@@ -14,7 +14,7 @@
 
 Query with explanation :
 
---After creating a copy of raw data , added a column using partition for finding duplicates--
+#️⃣--After creating a copy of raw data , added a column using partition for finding duplicates--
 
 
 SELECT
@@ -39,7 +39,7 @@ select * from duplicate_cte
 where row_num>1;
 
 
---Created copy of working table with an addition of row_num column--
+#️⃣--Created copy of working table with an addition of row_num column--
 
 insert into layoffs_staging2 (company, location, industry, total_laid_off, percentage_laid_off, Layoff_date, stage,country, funds_raised_millions,row_num)
 SELECT  company, location, industry, total_laid_off, percentage_laid_off, Layoff_date, stage,country, funds_raised_millions ,
@@ -51,7 +51,7 @@ FROM layoffs_staging;
 
 select * from layoffs_staging2;
 
---Checked and deleted all the rows having duplicates--
+#️⃣--Checked and deleted all the rows having duplicates--
 
 Delete
 from layoffs_staging2
@@ -60,7 +60,7 @@ where row_num>1;
 select * from layoffs_staging2;
 
 
---Removed unwanted white spaces from column 'Company'--
+#️⃣--Removed unwanted white spaces from column 'Company'--
 
 select company,trim(company)
 from layoffs_staging2
@@ -69,7 +69,7 @@ update layoffs_staging2
 set company = trim(company)
 
 
---Cleaned the 'Industry' column by removing extra spaces from identical values--
+#️⃣--Cleaned the 'Industry' column by removing extra spaces from identical values--
 
 select * from layoffs_staging2
 where industry like 'Crypto%'
@@ -79,7 +79,7 @@ set industry = 'Crypto'
 where industry like 'Crypto%'
 
 
---Cleaned the 'Location' column by removing extra spaces from identical values--
+#️⃣--Cleaned the 'Location' column by removing extra spaces from identical values--
 
 
 select distinct(location) from layoffs_staging2
@@ -97,7 +97,7 @@ where country like 'United States%'
 select * from layoffs_staging2;
 
 
---Changed data format--
+#️⃣--Changed data format--
 
 select to_char(layoff_date, 'MM/DD/YYYY') FROM layoffs_staging2
 
@@ -105,7 +105,7 @@ update layoffs_staging2
 set layoff_date = to_char(layoff_date, 'MM/DD/YYYY');
 
 
---Checked for the rows where both columns mentioned are null or blank--
+#️⃣--Checked for the rows where both columns mentioned are null or blank--
 
 select * from layoffs_staging
 where total_laid_off is null and
@@ -118,7 +118,7 @@ or
 industry = '';
 
 
---Populated null values for mentioned columns--
+#️⃣--Populated null values for mentioned columns--
 
 MERGE INTO layoffs_staging2 t1
 USING layoffs_staging2 t2
@@ -140,7 +140,7 @@ WHERE (t1.industry IS NULL OR t1.industry = '');
 
 
 
---Deleted rows where both mentioned columns have null values--
+#️⃣--Deleted rows where both mentioned columns have null values--
 
 select * from layoffs_Staging2
 where total_laid_off is null
@@ -152,7 +152,7 @@ where total_laid_off is null
 and percentage_laid_off is null;
 
 
---Removed row column--
+#️⃣--Removed row column--
 
 select * from layoffs_staging2;
 
@@ -160,4 +160,4 @@ alter table layoffs_staging2
 drop column row_num;
 
 
-Dataset source: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv
+📖 Dataset source: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv
