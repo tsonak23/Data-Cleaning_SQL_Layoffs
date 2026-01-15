@@ -158,3 +158,6 @@ select * from layoffs_staging2;
 
 alter table layoffs_staging2
 drop column row_num;
+
+
+Dataset source: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv
